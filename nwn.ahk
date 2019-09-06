@@ -16,7 +16,7 @@ NumpadMult::
 return
 
 ; *** BEDGIN SHIFT NUMPADS
-MouseSpeed := 50
+SlowMouseSpeed := 50
 MoveSleep := 100 ; amount of time to sleep between slow mouse moves
 
 NumpadIns:: 
@@ -30,17 +30,16 @@ return
 
 NumpadEnd::
 while LoopCount < 150 {
-MouseMove, -1, 1, MouseSpeed , R
+MouseMove, -1, 1, SlowMouseSpeed , R;
 	LoopCount := LoopCount +1
 Sleep, MoveSleep 
 }
 LoopCount := 0
-
 return
 
 NumpadDown::
 while LoopCount < 200 {
-MouseMove, 0, 1, MouseSpeed , R
+MouseMove, 0, 1, SlowMouseSpeed , R
 	LoopCount := LoopCount +1
 Sleep, MoveSleep 
 }
@@ -50,7 +49,7 @@ return
 
 NumpadPgDn::
 while LoopCount < 150 {
-MouseMove, 1, 1, MouseSpeed , R
+MouseMove, 1, 1, SlowMouseSpeed , R
 	LoopCount := LoopCount +1
 Sleep, MoveSleep 
 }
@@ -59,7 +58,7 @@ return
 
 NumpadLeft::
 while LoopCount < 200 {
-MouseMove, -1, 0, MouseSpeed , R
+MouseMove, -1, 0, SlowMouseSpeed , R
 	LoopCount := LoopCount +1
 Sleep, MoveSleep 
 }
@@ -68,7 +67,7 @@ return
 
 NumpadRight::
 while LoopCount < 200 {
-MouseMove, 1, 0, MouseSpeed , R
+MouseMove, 1, 0, SlowMouseSpeed , R
 	LoopCount := LoopCount +1
 Sleep, MoveSleep 
 }
@@ -77,7 +76,7 @@ return
 
 NumpadHome::
 while LoopCount < 150 {
-MouseMove, -1, -1, MouseSpeed , R
+MouseMove, -1, -1, SlowMouseSpeed , R
 	LoopCount := LoopCount +1
 Sleep, MoveSleep 
 }
@@ -86,7 +85,7 @@ return
 
 NumpadUp::
 while LoopCount < 200 {
-MouseMove, 0, -1, MouseSpeed , R
+MouseMove, 0, -1, SlowMouseSpeed , R
 	LoopCount := LoopCount +1
 Sleep, MoveSleep 
 }
@@ -95,7 +94,7 @@ return
 
 NumpadPgUp::
 while LoopCount < 150 {
-MouseMove, 1, -1, MouseSpeed , R
+MouseMove, 1, -1, SlowMouseSpeed , R
 	LoopCount := LoopCount +1
 Sleep, MoveSleep 
 }
@@ -106,40 +105,56 @@ return
 
 
 ;   *** Begin normal numpads
+FastMouseSpeed := 1
+ 
+LongMouseSteps := 18 ;  does not seem to work for me in the mousemove calls
+
 Numpad1::
-MouseMove, -150, 150, 0, R
+While GetKeyState("Numpad1","P")
+	MouseMove, -18, 18, FastMouseSpeed, R
 return
  
 Numpad2::
-MouseMove, 0, 200,  0,   R
+while GetKeyState("Numpad2","P")
+	MouseMove, 0, 18, FastMouseSpeed, R		
 return
 
 Numpad3::
-MouseMove, 150, 150, 0, R
+While GetKeyState("Numpad3","P")
+	MouseMove, 18, 18, FastMouseSpeed, R			
 return
 
 Numpad4::
-MouseMove,   -200, 0,  0,   R
+While GetKeyState("Numpad4","P")
+	MouseMove, -18, 0, FastMouseSpeed, R	
 return
 
-Numpad5::
-Click
+Numpad5:: ;if the mouse is moving then stop it, else left-click
+if(LoopCount != 0){
+	LoopCount := 100000
+}else{
+	Click
+}
 return
  
 Numpad6::
-MouseMove, 200, 0,  0,   R
+While GetKeyState("Numpad6","P")
+	MouseMove, 18, 0, FastMouseSpeed, R
 return
 
 Numpad7::
-MouseMove,   -150, -150,  0,   R
+While GetKeyState("Numpad7","P")
+	MouseMove, -18, -18, FastMouseSpeed, R
 return
 
 Numpad8::
-MouseMove,   0, -200,  0,   R
+While GetKeyState("Numpad8","P")
+	MouseMove, 0, -18, FastMouseSpeed, R
 return
 
 Numpad9::
-MouseMove,   150, -150,  0,   R
+While GetKeyState("Numpad9","P")
+	MouseMove, 18, -18, FastMouseSpeed, R
 return
 ; *** END normal numpads
 
@@ -147,7 +162,7 @@ return
 ; For radial menus - move mouse as with normal numpads
 ; but then click and return
 
-*^Numpad1::
+	*^Numpad1::
 MouseMove,   -150,  150,  0,   R
 Click
 MouseMove,    150, -150,  0,   R
