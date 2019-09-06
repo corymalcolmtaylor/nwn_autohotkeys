@@ -78,116 +78,76 @@ NumpadClear::
 return
 
 NumpadEnd::
-	if (LoopCount > 0) {
-		LoopCount := 10000
-		Sleep, MoveSleep	
-	}
 	LoopCount := 0
 	while LoopCount < 150 {
 		MouseMove, -1, 1, SlowMouseSpeed , R;
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
-	LoopCount := 0
 return
 
 NumpadDown::
-	if (LoopCount > 0) {
-		LoopCount := 10000
-		Sleep, MoveSleep	
-	}
 	LoopCount := 0
 	while LoopCount < 200 {
 		MouseMove, 0, 1, SlowMouseSpeed , R
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
-	LoopCount := 0
 	Sleep, MoveSleep 
 return
 
 NumpadPgDn::
-	if (LoopCount > 0) {
-		LoopCount := 10000
-		Sleep, MoveSleep	
-	}
 	LoopCount := 0
 	while LoopCount < 150 {
 		MouseMove, 1, 1, SlowMouseSpeed , R
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
-	LoopCount := 0
 return
 
 NumpadLeft::
-	if (LoopCount > 0) {
-		LoopCount := 10000
-		Sleep, MoveSleep	
-	}
 	LoopCount := 0
 	while LoopCount < 200 {
 		MouseMove, -1, 0, SlowMouseSpeed , R
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
-	LoopCount := 0
 return
 
 NumpadRight::
-	if (LoopCount > 0) {
-		LoopCount := 10000
-		Sleep, MoveSleep	
-	}
 	LoopCount := 0
 	while LoopCount < 200 {
 		MouseMove, 1, 0, SlowMouseSpeed , R
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
-	LoopCount := 0
 return
 
 NumpadHome::
-	if (LoopCount > 0) {
-		LoopCount := 10000
-		Sleep, MoveSleep	
-	}
 	LoopCount := 0
 	while LoopCount < 150 {
 		MouseMove, -1, -1, SlowMouseSpeed , R
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
-	LoopCount := 0
 return
 
 NumpadUp::
-	if (LoopCount > 0) {
-		LoopCount := 10000
-		Sleep, MoveSleep	
-	}
 	LoopCount := 0
 	while LoopCount < 200 {
 		MouseMove, 0, -1, SlowMouseSpeed , R
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
-	LoopCount := 0
 return
 
 NumpadPgUp::
-	if (LoopCount > 0) {
-		LoopCount := 10000
-		Sleep, MoveSleep	
-	}
 	LoopCount := 0
 	while LoopCount < 150 {
 		MouseMove, 1, -1, SlowMouseSpeed , R
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
-	LoopCount := 0
 return
 
 ; ***  END SHIFT NUMPADS
