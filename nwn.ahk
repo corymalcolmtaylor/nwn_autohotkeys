@@ -4,8 +4,15 @@ LoopCount := 0
 
 ;   *** Begin normal numpads
 FastMouseSpeed := 1
-LongMouseSteps := 18
-; LongMouseSteps does not seem to work for me in the MouseMove calls
+LongMouseSteps := 18 
+
+NumpadDiv::
+	MouseMove, 960, 50, 0 ; putmouse near top of screen center
+return
+
+Numpad0::
+	MouseMove, 960, 575, 0 ; put mouse on cente on screen
+return 
 
 Numpad1::
 While GetKeyState("Numpad1","P")
