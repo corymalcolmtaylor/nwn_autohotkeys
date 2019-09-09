@@ -2,7 +2,7 @@ SetNumLockState, AlwaysOn
 
 LoopCount := 0
 
-;   *** Begin normal numpads
+;   *** Begin normal numpads xxx
 FastMouseSpeed := 1
 LongMouseSteps := 18 
 
@@ -74,7 +74,7 @@ MouseMove, 960, 575, 0 ; center pointer on PC and right click
 return
 
 NumpadClear::
-	LoopCount := 10000 ; used to exit loops for slow mouse movement
+	LoopCount := 100000 ; used to exit loops for slow mouse movement
 return
 
 NumpadEnd::
@@ -84,6 +84,7 @@ NumpadEnd::
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
+	LoopCount := 0
 return
 
 NumpadDown::
@@ -93,7 +94,8 @@ NumpadDown::
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
-	Sleep, MoveSleep 
+	LoopCount := 0
+ 
 return
 
 NumpadPgDn::
@@ -103,6 +105,7 @@ NumpadPgDn::
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
+	LoopCount := 0
 return
 
 NumpadLeft::
@@ -112,6 +115,7 @@ NumpadLeft::
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
+	LoopCount := 0
 return
 
 NumpadRight::
@@ -121,6 +125,7 @@ NumpadRight::
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
+	LoopCount := 0
 return
 
 NumpadHome::
@@ -130,6 +135,7 @@ NumpadHome::
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
+	LoopCount := 0
 return
 
 NumpadUp::
@@ -139,6 +145,7 @@ NumpadUp::
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
+	LoopCount := 0
 return
 
 NumpadPgUp::
@@ -148,6 +155,7 @@ NumpadPgUp::
 		LoopCount := LoopCount +1
 		Sleep, MoveSleep 
 	}
+	LoopCount := 0
 return
 
 ; ***  END SHIFT NUMPADS
